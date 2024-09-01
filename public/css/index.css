@@ -1,0 +1,55 @@
+body{
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,1)
+  ),url("../img/za.jpg");
+  background-position-y: center;
+  background-size: 100%;
+  padding-top: 12%;
+  padding-bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inicio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 0;
+  color: white;
+  text-align: center;
+  position: relative;
+  
+}
+
+.inicio h1{
+  color: khaki;
+  font-size: 3rem;
+  font-style:  oblique;
+  font-weight: bold;
+}
+#btn-inicio:hover{
+  font-weight: bold;
+  color: brown;
+}
+
+@media(max-width:768px){
+  .inicio{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    
+    position: relative;
+    top: 5rem;
+    gap: 3rem;
+    
+  }
+  .inicio h1{
+    font-size: 2rem;
+  }
+}

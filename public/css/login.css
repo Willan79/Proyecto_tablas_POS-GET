@@ -1,0 +1,26 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.login{
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  height: auto;
+  
+}
+.log{
+  background-color: rgba(252, 222, 52, 0.572);
+  padding: 2% 5%;
+  
+}
+.tit-log{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+.btn{
+  margin-left: 15%;
+}

@@ -1,0 +1,106 @@
+body{
+  font-family: sans-serif;
+  padding: 5.6rem 1.2rem; 
+}
+
+.header{
+  
+  height: 4rem;
+  position: fixed;/* Esto significa que el elemento se posicionará de forma fija en relación con la ventana del navegador, es decir, no se moverá al hacer scroll */
+  z-index: 1;/*Controla la superposición de elementos. Un valor de z-index más alto indica que el elemento debe estar por encima de otros elementos con un índice Z más bajo.*/
+  width: 100%;
+  top: 0; /* Alineado con el borde superior del contenedor*/
+  left: 0;
+}
+.nav{
+  display: flex;
+  justify-content: space-between; /* divide los componentes ala izquierda y derecha */
+  margin: auto;
+}
+.nav-link{
+  display: flex;
+  align-items: center;
+  color: brown;
+  height: 2.3rem;
+  border-radius: 0.5rem;
+  text-decoration: none;  
+  
+  margin: 1rem  1rem 0 0;
+}
+.nav-link:hover{
+  color: white; 
+  background-color: rgb(244, 163, 3);
+}
+
+.nav-logo{
+  background-color: white;
+  border-radius: 50%;
+  border: solid 3px white;
+  height: 4rem;
+  width: auto;
+  margin: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-menu{
+  display: flex; /* Por defecto, coloca los elementos en filas. (row) */
+  align-items: center;
+  list-style: none; /* quitar los puntos de las listas*/
+  line-height: 5rem;
+}
+.nav-item span{
+  font-size: 0.7rem;
+}
+.nav-burger{
+  color: brown;
+  background: none;
+  border: none;
+  height: 3rem;
+  margin: 0.5rem 2rem 0 0;
+  font-size: 3rem;
+  display: none; /* para que no se vea el logo  (.nav-burger) */
+}
+.nav-burger i{
+  display: flex;
+  align-items: center;
+}
+.nav-burger i:hover{
+  color: white;
+}
+
+@media (max-width:768px) {
+  body{
+    padding-top: 4.5rem; 
+  }
+  
+  .nav-logo{
+    height: 4rem;
+    width: auto;
+     
+  }
+  .nav-menu{
+    flex-direction: column;
+    margin-left: 60%;
+    background-color: gold;
+    border-radius: 0 0 1rem 1rem;
+    position: fixed;
+    display: flex;
+    
+    padding: 0;
+    top: 4rem;/* se posiciona del header hacia abajo (Header 5rem)*/
+    width: 40%;
+    left: 100%;/* Este tipo de posicionamiento es comúnmente utilizado para colocar un elemento fuera del área visible, especialmente en el contexto de elementos de navegación o elementos emergentes que deben aparecer desde fuera de la pantalla
+    */
+  }
+  .nav-burger{
+    display: block; /* para que aparesca el logo (.nav-burger) */
+    margin-right: 15%;
+  }
+  .nav-menu_visible{ /*Clase que se aplica con JavaScritp*/
+    left: 0;
+  }
+  .nav-link{
+    font-size: 1.2rem;
+  }
+}

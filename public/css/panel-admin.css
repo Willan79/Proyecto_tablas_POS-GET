@@ -1,0 +1,133 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(212, 212, 212);
+}
+.panel{
+  display: flex;
+  height: 100%;
+  
+}
+
+.nav-burger2{
+  color: brown;
+  background: none;
+  border: none;
+  height: 3rem;
+  
+  font-size: 3rem;
+  display: none; /* para que no se vea */
+}
+.nav-burger2 :hover{
+  color: white;
+}
+
+.cuerpo{
+  
+  width: 100%;
+  height: 100vh;
+}
+#hea{
+ 
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenido{
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+.row{
+  margin: 0.5% 5% ;
+  gap: 2%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.row a{
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.row a :hover{
+  color: white;
+}
+
+.card{
+  width: 20%;
+}
+
+.img-panel{
+  padding: 2% 5%;
+}
+@media (max-width:768px) {
+  .lateral{
+    position: fixed;
+    display: none;
+  }
+  .logo{
+    display: none;
+  }
+  .row{
+    row-gap: 1rem;
+  }
+
+  .card{
+    width: 100%;
+  }
+  .lateral{
+    
+    margin-right: 50%;
+    border-radius: 0 0 2rem 2rem;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    flex-direction: column;
+    border-top: solid 2px white;
+    padding: 0;
+    top: 5rem;/* se posiciona del header acia abajo (Header 5rem)*/
+    width: 50%;
+    left: 100%;/* Este tipo de posicionamiento es comúnmente utilizado para colocar un elemento fuera del área visible, especialmente en el contexto de elementos de navegación o elementos emergentes que deben aparecer desde fuera de la pantalla
+    */
+  }
+  .nav-burger2{
+    display: block; /* para que aparesca el logo (.nav-burger) */
+    margin-right: 15%;
+  }
+  .lateral_visible{ /*Clase que se aplica con JavaScritp*/
+    left: 0;
+  }
+}
+
+.cuerpo{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+}
+.table{
+  background-color: white;
+  width: 95%;
+  margin: 0 2.5%;
+  
+}
+.h3{
+  display: flex;
+  justify-content: center;
+}
+.thead{
+  background-color: rgb(255, 170, 0);
+}
+.form-select{
+  width: 55%;
+}
