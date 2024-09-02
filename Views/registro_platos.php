@@ -15,6 +15,7 @@
   <form id="reg" action="../logic/logic_platos.php" method="POST" enctype="multipart/form-data">
     <h4 class="tit-reg">Nuevo plato</h4>
     <?php
+    
     // Llamamos los archivos Database.php y logic_platos.php
     //include_once "../Data/Database.php";
     //include "../logic/logic_platos.php";
@@ -35,7 +36,7 @@
 
     <div class="mb-2">
       <label for="descripcion" class="form-label">Descripción</label>
-      <textarea type="text" class="form-control" id="descripcion" name="descripcion"></textarea>
+      <textarea type="text" class="form-control" id="descripcion" name="descripcion" rows="1"></textarea>
     </div>
     <div class="mb-2">
       <label for="imagen" class="form-label">Imagen</label>

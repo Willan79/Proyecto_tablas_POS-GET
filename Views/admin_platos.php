@@ -38,7 +38,6 @@
       <div class="bg-warning" id="superior">
         <button class="nav-burger2"><i class="bi bi-list"></i></button>
         <h3>Panel administrativo</h3>
-
       </div>
 
       <?php
@@ -80,15 +79,16 @@
               <td><?= $datos->nombre_plato ?></td>
               <td><textarea class="form-control" id="textarea" rows="1"><?= $datos->descripcion ?></textarea></td>
               <td>
-                <img id="imagen" src="data:image/jpg;base64,<?= base64_encode($datos->imagen)?>" class="figure-img img-fluid rounded" alt="...">
+              <img id="imagen" src="data:image/jpg;base64,<?= base64_encode($datos->imagen)?>" alt="..." >
               </td>
+              
               <td><?= $datos->precio ?></td>
               <td><?= $datos->cantidad ?></td>
               <td id="accion">
 
                 <!-- El href nos lleva al archivo (modificar_platos.php) con un id especifico (?id=< $datos->plato_id > ) -->
                 <a class="btn" id="btnAccion" href="/Views/modificar_platos.php?id=<?= $datos->plato_id ?>"><i id="lapiz" class="bi bi-pencil-square"></i></a>
-                <a class="btn" onclick="elimina()" id="btnAccion" href="/Views/admin_platos.php?id=<?= $datos->plato_id ?>"><i id="papel" class="bi bi-trash3"></i></a>
+                <a class="btn" herf="../public/imagenes/9.png" onclick="elimina()" id="btnAccion" href="/Views/admin_platos.php?id=<?= $datos->plato_id ?>"><i id="papel" class="bi bi-trash3"></i></a>
                 
               </td>
             </tr>
