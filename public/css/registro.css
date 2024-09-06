@@ -31,6 +31,10 @@
   margin: 1rem  auto 15rem auto;
 }
 
+#direccion{
+  margin: 1.3rem 0 0.7rem 0;
+}
+
 #lapiz {
   color: lime;
   font-size: 1.3rem;

@@ -3,7 +3,6 @@
 $id = $_GET["id"];
 include_once "../Data/Database.php";
 $sql = $conex->query("SELECT * FROM platos WHERE plato_id=$id");
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,7 @@ $sql = $conex->query("SELECT * FROM platos WHERE plato_id=$id");
 
 <body class="regis">
 
-  <form id="reg" method="POST">
+  <form id="reg" method="POST" enctype="multipart/form-data">
     <h4 class="tit-reg">Modificar plato</h4>
 
     <!-- Se crea un imput para traer el id, pero el imput no se debe mostrar en el formulario-->
@@ -53,17 +52,19 @@ $sql = $conex->query("SELECT * FROM platos WHERE plato_id=$id");
         <textarea type="text" class="form-control" id="descripcion" name="descripcion" value="<?= $datos->descripcion ?>"></textarea>
 
       </div>
+
       <div class="mb-2">
         <label for="imagen" class="form-label">Imagen</label>
-        <input type="text" class="form-control" id="imagen" name="imagen" value="<?= $datos->imagen ?>">
+        <input type="file" class="form-control" aria-label="file example" id="imagen" name="imagen" value="<?= $datos->imagen ?>" required>
       </div>
+
       <div class="mb-2">
         <label for="precio" class="form-label">Precio</label>
         <input type="text" class="form-control" id="precio" name="precio" value="<?= $datos->precio ?>">
       </div>
       <div class="mb-2">
         <label for="cantidad" class="form-label">Cantidad disponible</label>
-        <input type="text" class="form-control" id="cantidad" name="cantidad" value="<?= $datos->cantidad ?>">
+        <input type="text" class="form-control" id="cantidad" name="cantidad_disponible" value="<?= $datos->cantidad_disponible ?>">
       </div>
 
     <?php

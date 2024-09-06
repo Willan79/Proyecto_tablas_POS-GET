@@ -23,7 +23,6 @@
       <div class="mb-2">
         <label for="validationTooltip03" class="form-label">Apellido</label>
         <input type="text" class="form-control" id="validationTooltip03" name="apellido">
-        
       </div>
     
       <div class="mb-2">
@@ -35,13 +34,17 @@
         <label for="validationTooltip04" class="form-label">Teléfono</label>
         <input type="text" class="form-control" id="validationTooltip04" name="telefono">
       </div>
-      <div class="mb-2">
-        <label for="validationTooltip05" class="form-label">Dirección</label>
-        <input type="text" class="form-control" id="validationTooltip05" name="direccion">
+
+      <div class="input-group" id="direccion"> 
+        <span class="input-group-text">Direccion</span>
+        <input type="text" aria-label="First name" class="form-control" name="barrio" placeholder="Barrio">
+        <input type="text" aria-label="Last name" class="form-control" name="calle_carrera" placeholder="Calle">
+        <input type="text" aria-label=" name" class="form-control" name="numero" placeholder="número">
       </div>
+
       <div class="mb-2">
         <label for="Password1" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="Password1" name="contraseña" placeholder="...contraseña">
+        <input type="password" class="form-control" id="Password1" name="contrasena" placeholder="contraseña">
       </div>
 
       <!-- (name="registrar") para llamarlo desde logic_user.php -->

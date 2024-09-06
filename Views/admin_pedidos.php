@@ -7,7 +7,7 @@
   <title>Pedidos admin</title>
 
   <?php include_once "../Views/layouts/bootstrap.php" ?>
-  <link rel="stylesheet" href="/public/css/tablas.css" />
+  <link rel="stylesheet" href="/public/css/tablas.css"/>
 </head>
 
 <body>
@@ -58,7 +58,7 @@
 
           while ($datos = $sql->fetch_object()) { ?>
             <tr>
-              <td><?= $datos->pedido_id ?></td>
+              <th><?= $datos->pedido_id ?></th>
               <td><?= $datos->nombre." ".$datos->apellido ?></td>
               <td><?= $datos->fecha_pedido ?></td>
               <td><?= $datos->estado ?></td>

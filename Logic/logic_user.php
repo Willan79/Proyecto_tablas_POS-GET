@@ -1,30 +1,47 @@
 <?php
 // Logica de registro de Usuarios
 // name (registrar) del boton (Registrar) del archivo (registro_user.php)
-if(!empty($_POST["registrar"])){ 
-    if(!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["email"]) and !empty($_POST["direccion"]) and !empty($_POST["telefono"]) and !empty($_POST["contraseña"])){
-       
-       $nombre=$_POST["nombre"];
-       $apellido=$_POST["apellido"];
-       $email=$_POST["email"];
-       $telefono=$_POST["telefono"];
-       $direccion=$_POST["direccion"];
-       $contraseña=$_POST["contraseña"];    
-       
-       $sql = $conex->query("INSERT INTO clientes(nombre,apellido,email,telefono,direccion,contraseña)values('$nombre', '$apellido', '$email', '$direccion','$telefono', '$contraseña')");
-       if($sql == 1){
+if (!empty($_POST["registrar"])) {
+
+
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $email = $_POST["email"];
+    $telefono = $_POST["telefono"];
+    $barrio = $_POST["barrio"];
+    $calle_carrera = $_POST["calle_carrera"];
+    $numero = $_POST["numero"];
+    $contraseña = $_POST["contrasena"];
+
+    $direccion = "INSERT INTO direccion( barrio, calle_carrera, numero)
+        values('$barrio' ,'$calle_carrera', '$numero')";
+    $direccion = mysqli_query($conex, $direccion);
+
+
+
+
+
+    if ($direccion == 1) {
+
+        // trae el id de la tabla direccion que se acaba de insertar
+        $direccion_id = $conex->insert_id;
+
+        $clientes = "INSERT INTO clientes(direccion_id, nombre, apellido, email, telefono, contrasena)
+        values('$direccion_id','$nombre', '$apellido', '$email','$telefono', '$contraseña')";
+        $clientes = mysqli_query($conex, $clientes);
+
         echo '<div class="alert alert-success">Registro exitoso</div>';
-       }else{
+    } else {
+        $conex->rollback(); //Si ocurre algún error revertirá todos los cambios que se hayan realizado en la base de datos
         echo '<div class="alert alert-danger">Error de registro</div>';
-       }
-    }else{
-        echo '<div class="alert alert-warning">Hay campos vacíos</div>';
-    }?>
-    
-    
+    }
+
+?>
+
+
     <script>
         // script para evitar que aparesca una alerta al refrescar la pagina.
-        history.replaceState(null,null,location.pathname);
+        history.replaceState(null, null, location.pathname);
     </script>
 
 <?php }

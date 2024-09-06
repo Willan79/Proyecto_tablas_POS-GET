@@ -2,7 +2,7 @@
 <?php
 // ! Configuración de conxión a base de datos
 
-$conex = mysqli_connect("localhost", "root", "", "pija_pariente");
+$conex = mysqli_connect("localhost", "root", "", "restaurante01");
 $conex->set_charset("uft8");
 
 // Verificar conexión

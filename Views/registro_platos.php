@@ -11,14 +11,16 @@
 </head>
 
 <body class="regis">
-
-  <form id="reg" action="../logic/logic_platos.php" method="POST" enctype="multipart/form-data">
+  
+<!-- enctype="multipart/form-data" permite trabajar con archivos ejemplo imagenes  -->
+  <form id="reg"  method="POST" enctype="multipart/form-data">
+  <!-- action="../logic/logic_platos.php"-->
     <h4 class="tit-reg">Nuevo plato</h4>
     <?php
     
     // Llamamos los archivos Database.php y logic_platos.php
-    //include_once "../Data/Database.php";
-    //include "../logic/logic_platos.php";
+    include_once "../Data/Database.php";
+    include "../logic/logic_platos.php";
     ?>
     <div class="mb-2">
       <label for="categoria" class="form-label">Categoria</label>
@@ -48,7 +50,7 @@
     </div>
     <div class="mb-2">
       <label for="cantidad" class="form-label">Cantidad disponible</label>
-      <input type="text" class="form-control" id="cantidad" name="cantidad">
+      <input type="text" class="form-control" id="cantidad" name="cantidad_disponible">
     </div>
 
     <!-- (name="nuevoP") para llamarlo desde logic_platos.php -->

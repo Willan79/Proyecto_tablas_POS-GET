@@ -7,16 +7,16 @@
   <title>Platos</title>
 
   <?php include_once "../Views/layouts/bootstrap.php" ?>
+  
   <link rel="stylesheet" href="/public/css/tablas.css" />
 </head>
 
-<body>
-
+<body>  
   <!-- Script para que se muestre una elerta antes de eliminar -->
   <script>
-    function elimina() {
-      var respuesta = confirm("¿Deseas eliminar el plato?");
-      return respuesta;
+    function eliminarPlato() {
+      var respuesta = confirm("¿Deseas eliminar este plato?");
+      return respuesta
     }
   </script>
 
@@ -66,7 +66,7 @@
           <?php
 
           $sql = $conex->query(
-            "SELECT plato_id,  categorías, nombre_plato, descripcion, imagen, precio, cantidad 
+            "SELECT plato_id,  categorias, nombre_plato, descripcion, imagen, precio, cantidad_disponible 
             FROM platos p 
             INNER JOIN menu m
             ON p.menu_id= m.menu_id"
@@ -74,21 +74,23 @@
 
           while ($datos = $sql->fetch_object()) { ?>
             <tr>
-              <td><?= $datos->plato_id ?></td>
-              <td><?= $datos->categorías ?></td>
+              <th><?= $datos->plato_id ?></th>
+              <td><?= $datos->categorias ?></td>  
               <td><?= $datos->nombre_plato ?></td>
+              
               <td><textarea class="form-control" id="textarea" rows="1"><?= $datos->descripcion ?></textarea></td>
-              <td>
-              <img id="imagen" src="data:image/jpg;base64,<?= base64_encode($datos->imagen)?>" alt="..." >
+             
+              <td >
+                <img id="imagen" src="../imagenes/<?=($datos->imagen)?>" alt="Error" width="50px" height="50px" >
               </td>
               
               <td><?= $datos->precio ?></td>
-              <td><?= $datos->cantidad ?></td>
-              <td id="accion">
+              <td><?= $datos->cantidad_disponible ?></td>
 
+              <td id="accion">
                 <!-- El href nos lleva al archivo (modificar_platos.php) con un id especifico (?id=< $datos->plato_id > ) -->
                 <a class="btn" id="btnAccion" href="/Views/modificar_platos.php?id=<?= $datos->plato_id ?>"><i id="lapiz" class="bi bi-pencil-square"></i></a>
-                <a class="btn" herf="../public/imagenes/9.png" onclick="elimina()" id="btnAccion" href="/Views/admin_platos.php?id=<?= $datos->plato_id ?>"><i id="papel" class="bi bi-trash3"></i></a>
+                <a onclick="return eliminarPlato()" id="btnAccion" href="/Views/admin_platos.php?id=<?= $datos->plato_id ?>" class="btn"><i id="papel" class="bi bi-trash3"></i></a>
                 
               </td>
             </tr>
@@ -104,10 +106,11 @@
 
 </body>
 <script src="/public/js/navAdmin.js"></script>
+
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-  crossorigin="anonymous">
-</script>
+  crossorigin="anonymous"
+></script>
 
 </html>

@@ -11,6 +11,12 @@
 </head>
 
 <body>
+<script>
+    function eliminarCliente() {
+      var respuesta = confirm("¿Deseas eliminar este cliente?");
+      return respuesta
+    }
+  </script>
   <main class="panel">
     <section class="lateral bg-warning">
       <div class="div-logo">
@@ -21,14 +27,24 @@
       <a href="/Views/admin_pedidos.php"><i class="bi bi-bell-fill"></i>Pedidos</a>
       <a href="/Views/admin_platos.php"><i class="bi bi-duffle"></i>Platos</p>
       <a><i class="bi bi-people-fill"></i> Usuarios</a>
+      <div class="adm-ini">
+        <a href="/index.php"><i class="bi bi-house-door-fill"></i>Inicio</a>
+      </div>
+      
     </section>
 
     <section class="cuerpo">
       <div class="bg-warning" id="superior">
         <button class="nav-burger2"><i class="bi bi-list"></i></button>
         <h3>Panel administrativo</h3>
-        
+
       </div>
+
+      <?php
+      include_once "../Data/Database.php";
+      include "../Logic/logic_eliminar_user.php";
+      ?>
+
       <table class="table">
         <h3 class="User">Usuarios</h3>
         <thead class="encabezados bg-warning">
@@ -45,21 +61,28 @@
         </thead>
         <tbody>
           <?php
-
+          
           include_once "../Data/Database.php";
-          $sql = $conex->query("SELECT * FROM clientes");
-
+          
+          $sql = $conex->query(
+            "SELECT cliente_id, nombre , apellido , email , telefono , barrio, calle_carrera,numero, contrasena
+            FROM clientes c 
+            INNER JOIN direccion d
+            ON  c.direccion_id = d.direccion_id"
+          );
+          
+          
           while ($datos = $sql->fetch_object()) { ?>
             <tr>
-              <td><?= $datos->cliente_id ?></td>
+              <th><?= $datos->cliente_id ?></th>
               <td><?= $datos->nombre ?></td>
               <td><?= $datos->apellido ?></td>
               <td><?= $datos->email ?></td>
               <td><?= $datos->telefono ?></td>
-              <td><?= $datos->direccion ?></td>
-              <td><?= $datos->contraseña ?></td>
+              <td><?= $datos->barrio .". " . $datos->calle_carrera . ". " . $datos->numero?></td>
+              <td><?= $datos->contrasena ?></td>
               <td id="accion">
-                <a class="btn" id="btnAccion"><i id="papel" class="bi bi-trash3"></i></a>
+                <a onclick="return eliminarCliente()" id="btnAccion" href="/Views/admin_usuarios.php?id=<?= $datos->cliente_id ?>" class="btn"><i id="papel" class="bi bi-trash3"></i></a>
               </td>
             </tr>
           <?php
