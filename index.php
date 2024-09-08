@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -8,7 +10,7 @@
 
     <link rel="stylesheet" href="/public/css/index.css" />
   </head>
-  <body>
+  <body>  
     <?php include_once "./Views/layouts/header.php"?> 
     <main class="inicio">
       <h1>BIENVENIDOS A PIJA PARIENTE</h1>

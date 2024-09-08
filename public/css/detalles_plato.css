@@ -1,0 +1,49 @@
+.dt-plato{
+  font-size: 2rem;
+  margin-top: 5%;
+
+}
+.card{
+  flex-direction: row;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.img-detalle{
+  width: 40%;
+  height: auto;
+}
+.card-title{
+  font-size: 1.3rem;
+}
+.tt-descripción{
+  color: blue
+}
+.cantidad{
+  display: flex;
+  justify-content: space-between; 
+}
+
+.btn{
+  height: 3.3rem;
+}
+
+@media(max-width:768px){
+  .dt-plato{
+    font-size: 1.5rem;
+    margin-top: 5%;
+  
+  }
+  .card{
+    flex-direction: column;
+  }
+  .img-detalle{
+    width: 60%;
+    height: auto;
+  }
+  .cantidad{
+    gap: 5%;
+  }
+}

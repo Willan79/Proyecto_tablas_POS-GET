@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Categoria Corriente</title>
+  <title>Categoría Corriente</title>
 
   <?php include_once "../Views/layouts/bootstrap.php" ?>
   <link rel="stylesheet" href="../public/css/categorías.css" />
@@ -15,18 +15,12 @@
 
   <main class="container">
     <div class="nom-categ">
-      <h1>Plaillos corrientes</h1>
+      <h1>Platillos corrientes</h1>
     </div>
     <section class="row">
-
       <?php include_once "../Data/Database.php"; ?>
-
       <?php
-      $sql = $conex->query(
-        
-        "SELECT nombre_plato, precio, imagen FROM platos WHERE menu_id = 1"
-            
-      );
+      $sql = $conex->query("SELECT nombre_plato, precio, imagen FROM platos WHERE menu_id = 1");
 
       while ($datos = $sql->fetch_object()) { ?>
 
@@ -36,22 +30,17 @@
           <p><?= $datos->precio ?></p>
           <div class="boton">
             <button type="button" class="btn btn-success btn-sm"><i class="bi bi-cart4"></i>Agregar</button>
-            <a type="button" class="btn btn-primary btn-sm" href="detalles-plato.html">Detalles</a>
+            <a type="button" class="btn btn-primary btn-sm" href="/Views/detalles_plato.php" name="detalles">Detalles</a>
           </div>
         </div>
-
-
       <?php
       }
       ?>
-
-
     </section>
   </main>
 
   <?php include_once "../Views/layouts/footer.php" ?>
 </body>
-
+<script src="../public/js/nav.js"></script>
 <?php include_once "../Views/layouts/bootstrap_JS.php" ?>
-
 </html>

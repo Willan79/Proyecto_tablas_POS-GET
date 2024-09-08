@@ -61,5 +61,6 @@ if (!empty($_POST["modificarP"])) {
     history.replaceState(null, null, location.pathname);
   </script>
 
-<?php }
+<?php 
+}
 ?>

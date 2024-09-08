@@ -19,6 +19,7 @@ body{
 .lateral{
   width: 10%;
   height: 100%;
+  gap: 3%;
   display: flex;
   border-right: solid 1px orange;
   flex-direction: column;
@@ -46,9 +47,12 @@ body{
 }
 
 .lateral a{
+  
   display: flex;
   padding: 1rem;
   font-size: 1rem;
+  
+  border-radius: 10%;
   text-decoration: none;
   color: white;
 }
@@ -59,7 +63,7 @@ body{
 
 .adm-ini{
   margin-top: 100%;
-  padding: 1rem;
+  
 }
 
 .lateral a:hover{
@@ -119,6 +123,11 @@ body{
   flex-direction: row;
   gap: 30%;
   margin-top: 2%;
+}
+
+table{
+  width: 100%;
+  table-layout: fixed;
 }
 
 #btnNuevoP{
@@ -185,10 +194,7 @@ body{
   .lateral_visible{ /*Clase que se aplica con JavaScritp*/
     left: 0;
   }
-  .table{
-    width: 96vh;
-    margin: 0 2vh;
-  }
+  
   .logo{
     display: none;
   }

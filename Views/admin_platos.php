@@ -8,7 +8,6 @@
 
   <?php include_once "../Views/layouts/bootstrap.php" ?>
   
-  <link rel="stylesheet" href="/public/css/tablas.css" />
 </head>
 
 <body>  
@@ -106,11 +105,6 @@
 
 </body>
 <script src="/public/js/navAdmin.js"></script>
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-  crossorigin="anonymous"
-></script>
+<?php include_once "../Views/layouts/bootstrap_JS.php"?>
 
 </html>

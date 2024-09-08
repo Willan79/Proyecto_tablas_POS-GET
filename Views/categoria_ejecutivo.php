@@ -15,18 +15,14 @@
 
   <main class="container">
     <div class="nom-categ">
-      <h1>Plaillos ejecutivos</h1>
+      <h1>Platillos ejecutivos</h1>
     </div>
     <section class="row">
 
       <?php include_once "../Data/Database.php"; ?>
 
       <?php
-      $sql = $conex->query(
-        
-        "SELECT nombre_plato, precio, imagen FROM platos WHERE menu_id = 2"
-            
-      );
+      $sql = $conex->query("SELECT nombre_plato, precio, imagen FROM platos WHERE menu_id = 2");
 
       while ($datos = $sql->fetch_object()) { ?>
 
@@ -51,6 +47,6 @@
 
   <?php include_once "../Views/layouts/footer.php"?>
 </body>
-
+<script src="../public/js/nav.js"></script>
 <?php include_once "../Views/layouts/bootstrap_JS.php"?>
 </html>

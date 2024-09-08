@@ -14,7 +14,7 @@
   <?php include_once "../Views/layouts/header.php"?>
   <main class="container">
     <div class="nom-categ">
-      <h1>Plaillos especiales</h1>
+      <h1>Platillos especiales</h1>
     </div>
     <section class="row">
 
@@ -50,6 +50,7 @@
 
   <?php include_once "../Views/layouts/footer.php"?>
 </body>
+<script src="../public/js/nav.js"></script>
 <?php include_once "../Views/layouts/bootstrap_JS.php"?>
 
 </html>

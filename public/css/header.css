@@ -69,6 +69,11 @@ body{
   color: white;
 }
 
+#nombreInicio{
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width:768px) {
   body{
     padding-top: 4.5rem; 
