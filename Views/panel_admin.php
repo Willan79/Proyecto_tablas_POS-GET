@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="card col-11 col-sm-4 col-lg-2 bg-info">
-            <a href="............"><strong>Servicios</strong></a>
+            <a href="../Views/admin_servicio.php"><strong>Servicios</strong></a>
             <div>
               <i class="bi bi-bar-chart-line"></i>
               <span>#00</span>

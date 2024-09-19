@@ -19,7 +19,7 @@
         gastronomía llanera.
       </p>
       <a class="btn bg-warning" id="btn-inicio" href="./Views/menu.php">IR A MENU </a>
-      <a class="btn bg-warning" id="btn-inicio" href="./Views/?????" role="button"
+      <a class="btn bg-warning" id="btn-inicio" href="./Views/cliente_servicio.php" role="button"
         >IR A SERVICIOS</a
       >
     </main>

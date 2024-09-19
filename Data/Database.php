@@ -3,7 +3,7 @@
 // ! Configuración de conxión a base de datos
 
 $conex = mysqli_connect("localhost", "root", "", "restaurante01");
-$conex->set_charset("uft8");
+$conex->set_charset("utf8");
 
 // Verificar conexión
 if ($conex) {

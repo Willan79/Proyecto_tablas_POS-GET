@@ -40,7 +40,7 @@
     <div class="input-group" id="direccion">
       <span class="input-group-text">Direccion</span>
       <input type="text" aria-label="First name" class="form-control" name="barrio" placeholder="Barrio">
-      <input type="text" aria-label="Last name" class="form-control" name="calle_carrera" placeholder="Calle">
+      <input type="text" aria-label="Last name" class="form-control" name="calle_carrera" placeholder="carrera-calle">
       <input type="text" aria-label=" name" class="form-control" name="numero" placeholder="número">
     </div>
 

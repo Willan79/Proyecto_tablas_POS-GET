@@ -22,7 +22,7 @@
         <a class="nav-link" href="/Views/menu.php">Menú</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="servicios.php">Servicios</a>
+        <a class="nav-link" href="/Views/cliente_servicio.php">Servicios</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/Views/login.php"><i class="bi bi-person-fill"></i>Login</a>

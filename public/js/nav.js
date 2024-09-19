@@ -10,3 +10,12 @@ InputNum.addEventListener("keypress", (e)=>{
   const expre = /[0-9]/;
   if(!expre.test(e,key)) e.preventDefault();
 });
+
+window.onload = function() {
+  const mensaje = document.getElementById("mensajeEliminacion");
+  if (mensaje) {
+    setTimeout(function() {
+      mensaje.style.display = "none";
+    }, 3000); // Ocultar después de 3 segundos
+  }
+};
